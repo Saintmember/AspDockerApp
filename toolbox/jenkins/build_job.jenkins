@@ -19,31 +19,31 @@ sh "docker build -t Saintmember/AspDockerApp . "
 }
 }
 }
-stage("docker login") {
-steps {
-echo " ============== docker login =================="
-withCredentials([usernamePassword(credentialsId: 'DockerHub-Credentials', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
-sh '''
-docker login -u $USERNAME -p $PASSWORD
-'''
+// stage("docker login") {
+// steps {
+// echo " ============== docker login =================="
+// withCredentials([usernamePassword(credentialsId: 'DockerHub-Credentials', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
+// sh '''
+// docker login -u $USERNAME -p $PASSWORD
+// '''
+// }
+// }
 }
-}
-}
-stage("docker push") {
-steps {
-echo " ============== pushing image =================="
-sh '''
-docker push Saintmember/AspDockerApp:latest
-'''
-}
-}
-stage("Deploy to test server") {
-steps {
-echo " ============== Running playbook =================="
-sh '''
-ansible-playbook toolbox/ansible/playbooks/demloyToStageServer.yml
-'''
-}
-}
+// stage("docker push") {
+// steps {
+// echo " ============== pushing image =================="
+// sh '''
+// docker push Saintmember/AspDockerApp:latest
+// '''
+// }
+// }
+// stage("Deploy to test server") {
+// steps {
+// echo " ============== Running playbook =================="
+// sh '''
+// ansible-playbook toolbox/ansible/playbooks/demloyToStageServer.yml
+// '''
+// }
+// }
 }
 }
