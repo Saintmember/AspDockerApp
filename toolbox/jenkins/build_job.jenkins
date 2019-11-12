@@ -15,7 +15,7 @@ stage("Create docker image") {
 steps {
 echo 'Creating docker image ...'
 dir('.'){
-sh "docker build -t Saintmember/AspDockerApp . "
+sh "docker build -t Saintmember/aspDockerApp . "
 }
 }
 }
