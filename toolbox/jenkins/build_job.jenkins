@@ -37,13 +37,13 @@ sh "docker build -t saintmember/aspdockerapp . "
 // '''
 // }
 // }
-// stage("Deploy to test server") {
-// steps {
-// echo " ============== Running playbook =================="
-// sh '''
-// ansible-playbook toolbox/ansible/playbooks/demloyToStageServer.yml
-// '''
-// }
-// }
-// }
+stage("Deploy to test server") {
+steps {
+echo " ============== Running playbook =================="
+sh '''
+ansible-playbook toolbox/ansible/playbooks/demloyToStageServer.yml
+'''
+}
+}
+}
 }
