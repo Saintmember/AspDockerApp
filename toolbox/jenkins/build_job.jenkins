@@ -18,7 +18,7 @@ dir('.'){
 sh "docker build -t saintmember/aspdockerapp . "
 }
 }
-}
+
 // stage("docker login") {
 // steps {
 // echo " ============== docker login =================="
@@ -43,6 +43,7 @@ echo " ============== Running playbook =================="
 sh '''
 ansible-playbook toolbox/ansible/playbooks/demloyToStageServer.yml
 '''
+}
 }
 }
 }
