@@ -33,7 +33,7 @@ stage("docker push") {
 steps {
 echo " ============== pushing image =================="
 sh '''
-docker push Saintmember/AspDockerApp:latest
+docker push saintmember/aspdockerapp:latest
 '''
 }
 }
